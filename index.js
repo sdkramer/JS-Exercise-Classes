@@ -91,8 +91,6 @@ class Car {
       return `I ran out of fuel at ${this.odometer} miles!`;
     }
   }
-
-
 }
 
 /*
