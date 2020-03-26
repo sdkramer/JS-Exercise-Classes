@@ -155,6 +155,9 @@ class Instructor extends Lambdasian {
     return `${student.name} receives a perfect score on ${subject}`;
 
   }
+  adjustGrade(){
+    
+  }
 
 }
 
@@ -179,6 +182,7 @@ class Student extends Lambdasian {
     this.previousBackground = studentAttrs.previousBackground;
     this.className = studentAttrs.className;
     this.favSubjects = studentAttrs.favSubjects;
+    this.grade = 100;
   }
   listSubjects(){
     return `Loving ${this.favSubjects}!`;
