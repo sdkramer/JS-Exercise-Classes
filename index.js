@@ -87,7 +87,8 @@ class Car {
   drive(distance) {
     this.odometer = this.odometer + distance;
     this.tank = this.tank - (this.odometer / this.milesPerGallon);
-    if (this.tank == 0) {
+    if ((this.tank * this.milesPerGallon) <= distance){
+      this.odometer = this.odometer + (this.tank * this.milesPerGallon);
       return `I ran out of fuel at ${this.odometer} miles!`;
     };
   }
@@ -112,7 +113,7 @@ class Lambdasian {
     this.location = attrs.location;
   }
   speak(){
-    return `Hello my mane is ${this.name}, I am from ${this.location}.`;
+    return `Hello my name is ${this.name}, I am from ${this.location}.`;
   }
 
 }
@@ -139,10 +140,10 @@ class Instructor extends Lambdasian {
     this.catchPhrase = instrAttrs.catchPhrase;
   }
   demo(subject) {
-    return `Today we are learning about ${this.subject}`;
+    return `Today we are learning about ${subject}`;
   }
   grade(student, subject) {
-    return `${student.name} receives a perfect score on ${this.subject}` 
+    return `${student.name} receives a perfect score on ${subject}`;
 
   }
 
