@@ -100,7 +100,7 @@ class Car {
 /* if(distance > 0){
 
 } else {
-  
+
 }
 
 /*
@@ -181,13 +181,13 @@ class Student extends Lambdasian {
     this.favSubjects = studentAttrs.favSubjects;
   }
   listSubjects(){
-    returns `Loving ${this.favSubjects}!`;
+    return `Loving ${this.favSubjects}!`;
   }
   PRAssignment(subject){
-    returns `${student.name} has submitted a PR for ${subject}`;
+    return `${this.name} has submitted a PR for ${subject}`;
   }
   sprintChallenge(subject){
-    returns `${student.name} has begun sprint challenge on ${subject}`;
+    return `${this.name} has begun sprint challenge on ${subject}`;
   }
 
 }
@@ -210,6 +210,12 @@ class ProjectManager extends Instructor{
     super(attrs)
       this.gradClassName = attrs.gradClassName;
       this.favInstructor = attrs.favInstructor;
+    }
+    standUp(channel){
+      return `${this.name} announces to ${channel}, @channel standy times!`;
+    }
+    debugsCode(Student, subject){
+      return `${this.name} debugs ${Student.name}'s code on ${subject}`;
     }
 
   }
