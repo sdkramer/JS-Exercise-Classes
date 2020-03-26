@@ -86,14 +86,21 @@ class Car {
   }
   drive(distance) {
     this.odometer = this.odometer + distance;
-    this.tank = this.tank - (this.odometer / this.milesPerGallon);
+    this.tank = this.tank - (distance / this.milesPerGallon);
     if ((this.tank * this.milesPerGallon) <= distance){
       this.odometer = this.odometer + (this.tank * this.milesPerGallon);
       return `I ran out of fuel at ${this.odometer} miles!`;
     }else {
-      this.tank = this.tank - (this.odometer / this.milesPerGallon);
+      this.tank = this.tank - (distance / this.milesPerGallon);
     };
   }
+}
+
+
+/* if(distance > 0){
+
+} else {
+  
 }
 
 /*
@@ -136,7 +143,7 @@ class Lambdasian {
 */
 class Instructor extends Lambdasian {
   constructor(instrAttrs){
-    super(instrAttrs);
+    super(instrAttrs)
     this.specialty = instrAttrs.specialty;
     this.favLanguage = instrAttrs.favLanguage;
     this.catchPhrase = instrAttrs.catchPhrase;
@@ -169,15 +176,18 @@ class Instructor extends Lambdasian {
 class Student extends Lambdasian {
   constructor(studentAttrs){
   super(studentAttrs)
-    this.previousBackground = previousBackground;
-    this.className = className;
-    this.favSubjects = favSubjects;
+    this.previousBackground = studentAttrs.previousBackground;
+    this.className = studentAttrs.className;
+    this.favSubjects = studentAttrs.favSubjects;
   }
   listSubjects(){
-    returns `Loving ${this.favSubjects}`;
+    returns `Loving ${this.favSubjects}!`;
   }
   PRAssignment(subject){
     returns `${student.name} has submitted a PR for ${subject}`;
+  }
+  sprintChallenge(subject){
+    returns `${student.name} has begun sprint challenge on ${subject}`;
   }
 
 }
@@ -195,9 +205,16 @@ class Student extends Lambdasian {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
+class ProjectManager extends Instructor{
+  constructor(attrs){
+    super(attrs)
+      this.gradClassName = attrs.gradClassName;
+      this.favInstructor = attrs.favInstructor;
+    }
 
-}
+  }
+
+
 
 /*
   STRETCH PROBLEM (no tests!)
