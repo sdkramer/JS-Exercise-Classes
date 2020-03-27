@@ -85,14 +85,16 @@ class Car {
     this.tank = this.tank + gallons;
   }
   drive(distance) {
-    this.odometer = this.odometer + distance;
-    this.tank = this.tank - (distance / this.milesPerGallon);
-    if ((this.tank * this.milesPerGallon) <= distance){
-      this.odometer = this.odometer + (this.tank * this.milesPerGallon);
-      return `I ran out of fuel at ${this.odometer} miles!`;
-    }else {
-      this.tank = this.tank - (distance / this.milesPerGallon);
-    };
+    if (distance <= this.milesPerGallon * this.tank){
+      this.odometer = distance + this.odometer;
+      this.tank = this.tank - distance / this.milesPerGallon;
+    } else {
+      this.odometer = this.odometer + (this.milesPerGallon * this.tank);
+      this.tank = 0;
+      return `I ran out of fuel at ${this.odometer} miles`;
+
+    }
+
   }
 }
 
@@ -156,7 +158,7 @@ class Instructor extends Lambdasian {
 
   }
   adjustGrade(){
-    
+
   }
 
 }
